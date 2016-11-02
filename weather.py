@@ -10,6 +10,9 @@ yql_url = baseurl + urllib.urlencode({'q': yql_query}) + "&format=json"
 result = urllib2.urlopen(yql_url).read()
 data = json.loads(result) #loading json results
 
+#f = open("dump.json",'w')
+#f.write(result)
+#f.close()
 weather = data['query']['results']['channel'] #formatting and outputting the data
 
 print weather['description']
